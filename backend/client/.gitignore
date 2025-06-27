@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+# Node modules (for both backend and frontend)
+/Backend/node_modules
+/frontend/node_modules
+
+# Environment variables (sensitive data)
+/Backend/.env
+/frontend/.env # If you have a .env file in your frontend as well
+
+# Build output directory
+/frontend/dist
+
+# OS and editor specific files
+.DS_Store          # macOS specific
+npm-debug.log      # npm debug logs
+yarn-debug.log     # yarn debug logs
+.vscode/           # Optional: Ignores VS Code workspace settings
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

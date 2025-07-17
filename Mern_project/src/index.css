@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BookNest Design System - Warm, cozy bookstore theme */
+
+@layer base {
+  :root {
+    /* BookNest Color Palette - Warm browns and golds */
+    --background: 35 25% 98%;
+    --foreground: 25 40% 15%;
+
+    --card: 35 20% 96%;
+    --card-foreground: 25 40% 15%;
+
+    --popover: 35 20% 96%;
+    --popover-foreground: 25 40% 15%;
+
+    --primary: 25 55% 35%;
+    --primary-foreground: 35 25% 98%;
+    --primary-glow: 35 60% 55%;
+
+    --secondary: 35 15% 90%;
+    --secondary-foreground: 25 40% 25%;
+
+    --muted: 35 12% 88%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 45 70% 75%;
+    --accent-foreground: 25 40% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 35 25% 98%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 90%;
+    --ring: 25 55% 35%;
+
+    --radius: 0.5rem;
+
+    /* BookNest specific colors */
+    --book-spine: 25 45% 45%;
+    --book-page: 45 50% 95%;
+    --gold-accent: 45 85% 60%;
+    --warm-brown: 20 40% 30%;
+    --cozy-cream: 35 30% 95%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-warm: linear-gradient(180deg, hsl(var(--background)), hsl(var(--cozy-cream)));
+    --gradient-book: linear-gradient(90deg, hsl(var(--book-spine)), hsl(var(--book-page)));
+
+    /* Shadows */
+    --shadow-book: 0 4px 20px hsl(var(--primary) / 0.15);
+    --shadow-elegant: 0 8px 25px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 30px hsl(var(--gold-accent) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme for BookNest - Cozy evening reading */
+    --background: 20 15% 8%;
+    --foreground: 35 30% 95%;
+
+    --card: 20 20% 12%;
+    --card-foreground: 35 30% 95%;
+
+    --popover: 20 20% 12%;
+    --popover-foreground: 35 30% 95%;
+
+    --primary: 45 60% 65%;
+    --primary-foreground: 20 15% 8%;
+    --primary-glow: 45 70% 75%;
+
+    --secondary: 20 15% 20%;
+    --secondary-foreground: 35 25% 85%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 45 55% 55%;
+    --accent-foreground: 20 15% 8%;
+
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 35 30% 95%;
+
+    --border: 20 20% 25%;
+    --input: 20 20% 18%;
+    --ring: 45 60% 65%;
+
+    /* Dark theme specific colors */
+    --book-spine: 25 35% 35%;
+    --book-page: 45 25% 85%;
+    --gold-accent: 45 75% 70%;
+    --warm-brown: 20 30% 25%;
+    --cozy-cream: 35 15% 15%;
+
+    --sidebar-background: 20 15% 8%;
+    --sidebar-foreground: 35 30% 95%;
+    --sidebar-primary: 45 60% 65%;
+    --sidebar-primary-foreground: 20 15% 8%;
+    --sidebar-accent: 20 15% 20%;
+    --sidebar-accent-foreground: 35 25% 85%;
+    --sidebar-border: 20 20% 25%;
+    --sidebar-ring: 45 60% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+@layer components {
+  /* BookNest specific component styles */
+  .book-card {
+    @apply bg-card border border-border rounded-lg shadow-[var(--shadow-book)] 
+           hover:shadow-[var(--shadow-elegant)] transition-[var(--transition-smooth)]
+           hover:scale-[1.02] cursor-pointer;
+  }
+
+  .book-card:hover {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg
+           hover:bg-primary/90 transition-[var(--transition-smooth)]
+           focus:ring-2 focus:ring-ring focus:outline-none
+           font-medium shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg
+           hover:bg-secondary/80 transition-[var(--transition-smooth)]
+           focus:ring-2 focus:ring-ring focus:outline-none
+           font-medium border border-border;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground px-6 py-3 rounded-lg
+           hover:bg-accent/90 transition-[var(--transition-smooth)]
+           focus:ring-2 focus:ring-ring focus:outline-none
+           font-medium shadow-sm;
+  }
+
+  .input-field {
+    @apply bg-input border border-border rounded-lg px-4 py-2
+           focus:ring-2 focus:ring-ring focus:border-transparent
+           transition-[var(--transition-smooth)] placeholder:text-muted-foreground;
+  }
+
+  .glass-effect {
+    @apply bg-background/80 backdrop-blur-md border border-border/50;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .rupee-symbol::before {
+    content: "₹";
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
